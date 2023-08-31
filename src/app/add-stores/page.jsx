@@ -1,7 +1,7 @@
-import { Typography } from "@mui/material";
+import AddStoresModule from "@component/modules/AddStores";
 
 function AddStores() {
-  return <Typography>Add Stores</Typography>;
+  return <AddStoresModule />;
 }
 
 export default AddStores;

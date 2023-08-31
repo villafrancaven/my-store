@@ -22,14 +22,14 @@ function MenuBar() {
         </MenuItem>
         <MenuItem
           component={Link}
-          href="/view-stores"
+          href="/add-stores"
           onClick={handleCloseMenu}
         >
           Add Stores
         </MenuItem>
         <MenuItem
           component={Link}
-          href="/view-stores"
+          href="/manage-stores"
           onClick={handleCloseMenu}
         >
           Manage Stores
