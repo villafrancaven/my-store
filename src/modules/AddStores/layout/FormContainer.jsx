@@ -1,7 +1,7 @@
 import { Stack } from "@mui/material";
 import PropTypes from "prop-types";
 
-function FormContainer({ children, onSubmit }) {
+function FormContainer({ children, onSubmit, isEdit = false }) {
   return (
     <Stack
       onSubmit={onSubmit}
@@ -9,7 +9,7 @@ function FormContainer({ children, onSubmit }) {
       spacing={2.5}
       sx={{
         position: "relative",
-        top: "170px",
+        top: isEdit ? 0 : "170px",
         width: "100%",
         border: "1px solid #9E9FA5",
         borderRadius: "8px",

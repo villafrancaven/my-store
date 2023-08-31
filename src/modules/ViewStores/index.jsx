@@ -2,7 +2,7 @@ import { useContext } from "react";
 import BackgroundLayout from "./layout/BackgroundLayout";
 import StoreCard from "./StoreCard.jsx";
 import { MyStoreContext } from "@component/provider/my-store-provider";
-import { Box, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 
 function ViewStoresModule() {
   const { storeList } = useContext(MyStoreContext);
@@ -26,9 +26,11 @@ function ViewStoresModule() {
           </Typography>
         ) : (
           <>
-            {storeList.map((store) => (
-              <StoreCard key={store.id} data={store} />
-            ))}
+            <Stack spacing={2}>
+              {storeList.map((store) => (
+                <StoreCard key={store.id} data={store} />
+              ))}
+            </Stack>
           </>
         )}
       </Box>

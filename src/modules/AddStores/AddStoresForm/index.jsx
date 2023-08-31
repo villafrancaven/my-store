@@ -16,6 +16,7 @@ function AddStoresForm({
     address: "",
     email: "",
     mobile: "",
+    id: null,
   },
   handleCancel = () => {},
 }) {
@@ -33,7 +34,7 @@ function AddStoresForm({
   };
 
   const onFormEdit = (formData) => {
-    handleEditStoreMember(id, formData);
+    handleEditStoreMember(data.id, formData);
     handleCancel();
   };
 
@@ -46,7 +47,7 @@ function AddStoresForm({
 
   return (
     <FormProvider {...AddStoresFormMethods}>
-      <FormContainer onSubmit={handleSubmit(onFormSubmit)}>
+      <FormContainer onSubmit={handleSubmit(onFormSubmit)} isEdit={isEdit}>
         <StoreName />
         <Address />
         <Email />

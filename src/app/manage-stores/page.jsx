@@ -1,7 +1,8 @@
-import { Typography } from "@mui/material";
+"use client";
+import ManageStoresModule from "@component/modules/ManageStores";
 
 function ManageStores() {
-  return <Typography>Manage Stores</Typography>;
+  return <ManageStoresModule />;
 }
 
 export default ManageStores;
