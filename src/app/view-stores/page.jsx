@@ -1,7 +1,8 @@
-import { Typography } from "@mui/material";
+"use client";
+import ViewStoresModule from "@component/modules/ViewStores";
 
 function ViewStores() {
-  return <Typography>View Stores</Typography>;
+  return <ViewStoresModule />;
 }
 
 export default ViewStores;
