@@ -10,7 +10,7 @@ function CardContainer({ children }) {
         border: "1px solid #9E9FA5",
         borderRadius: "8px",
         p: "16px",
-        width: sm ? "100%" : "500px",
+        width: sm ? "300px" : "500px",
         bgcolor: "white",
       }}
     >
