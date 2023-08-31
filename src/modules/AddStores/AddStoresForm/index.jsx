@@ -8,6 +8,8 @@ import Address from "./inputs/Address";
 import Email from "./inputs/Email";
 import MobileNumber from "./inputs/MobileNumber";
 import useMyStoreServices from "@component/hooks/useMyStoreServices";
+import ConfirmationModal from "./ConfirmationModal";
+import { useState } from "react";
 
 function AddStoresForm({
   isEdit = false,
@@ -21,6 +23,7 @@ function AddStoresForm({
   handleCancel = () => {},
 }) {
   const { handleAddStore, handleEditStoreMember } = useMyStoreServices();
+  const [modalOpen, setModalOpen] = useState(false);
 
   const AddStoresFormMethods = useForm({
     defaultValues: data,
@@ -30,6 +33,7 @@ function AddStoresForm({
 
   const onSubmit = (formData) => {
     handleAddStore(formData);
+    setModalOpen((prev) => !prev);
     AddStoresFormMethods.reset(data);
   };
 
@@ -62,6 +66,11 @@ function AddStoresForm({
           </Button>
         )}
       </FormContainer>
+
+      <ConfirmationModal
+        open={modalOpen}
+        handleClose={() => setModalOpen((prev) => !prev)}
+      />
     </FormProvider>
   );
 }

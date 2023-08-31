@@ -5,10 +5,12 @@ import { useContext, useState } from "react";
 import { MyStoreContext } from "@component/provider/my-store-provider";
 import StoreItem from "./layout/StoreItem";
 import EditModal from "./EditModal";
+import DeleteModal from "./DeleteModal";
 
 function ManageStoresModule() {
   const { storeList } = useContext(MyStoreContext);
-  const [modalOpen, setModalOpen] = useState(false);
+  const [editModalOpen, setEditModalOpen] = useState(false);
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
 
   const isStoreWithData = storeList.length !== 0;
 
@@ -23,12 +25,18 @@ function ManageStoresModule() {
               <Box key={store.id}>
                 <StoreItem
                   storeName={store.storeName}
-                  onEdit={() => setModalOpen((prev) => !prev)}
+                  onEdit={() => setEditModalOpen((prev) => !prev)}
+                  onDelete={() => setDeleteModalOpen((prev) => !prev)}
                 />
                 <EditModal
-                  open={modalOpen}
-                  handleClose={() => setModalOpen((prev) => !prev)}
+                  open={editModalOpen}
+                  handleClose={() => setEditModalOpen((prev) => !prev)}
                   data={store}
+                />
+                <DeleteModal
+                  open={deleteModalOpen}
+                  handleClose={() => setDeleteModalOpen((prev) => !prev)}
+                  id={store.id}
                 />
               </Box>
             ))}

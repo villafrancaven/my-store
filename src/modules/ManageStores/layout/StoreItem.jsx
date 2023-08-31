@@ -8,15 +8,20 @@ import {
 } from "@mui/material";
 import StoreTwoToneIcon from "@mui/icons-material/StoreTwoTone";
 import ModeTwoToneIcon from "@mui/icons-material/ModeTwoTone";
+import DeleteTwoToneIcon from "@mui/icons-material/DeleteTwoTone";
 
-function StoreItem({ storeName, onEdit }) {
+function StoreItem({ storeName, onEdit, onDelete }) {
   return (
     <ListItem
-      onClick={onEdit}
       secondaryAction={
-        <IconButton edge="end" aria-label="delete">
-          <ModeTwoToneIcon />
-        </IconButton>
+        <>
+          <IconButton edge="end" aria-label="edit" onClick={onEdit}>
+            <ModeTwoToneIcon />
+          </IconButton>
+          <IconButton edge="end" aria-label="edit" onClick={onDelete}>
+            <DeleteTwoToneIcon />
+          </IconButton>
+        </>
       }
     >
       <ListItemAvatar>
@@ -32,6 +37,7 @@ function StoreItem({ storeName, onEdit }) {
 StoreItem.propTypes = {
   storeName: PropTypes.node.isRequired,
   onEdit: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
 
 export default StoreItem;
