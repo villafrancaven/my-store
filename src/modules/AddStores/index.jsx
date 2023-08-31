@@ -1,10 +1,10 @@
-import { Typography } from "@mui/material";
 import BackgroundLayout from "./layout/BackgroundLayout";
+import AddStoresForm from "./AddStoresForm";
 
 function AddStoresModule() {
   return (
     <BackgroundLayout>
-      <Typography>Add stores</Typography>
+      <AddStoresForm />
     </BackgroundLayout>
   );
 }
