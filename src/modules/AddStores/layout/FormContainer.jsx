@@ -1,7 +1,9 @@
-import { Stack } from "@mui/material";
+import { Stack, useMediaQuery } from "@mui/material";
 import PropTypes from "prop-types";
 
 function FormContainer({ children, onSubmit, isEdit = false }) {
+    const sm = useMediaQuery("(max-width:720px)");
+
   return (
     <Stack
       onSubmit={onSubmit}
@@ -10,7 +12,7 @@ function FormContainer({ children, onSubmit, isEdit = false }) {
       sx={{
         position: "relative",
         top: isEdit ? 0 : "170px",
-        width: "100%",
+        width: sm ? "100%" : '500px',
         border: "1px solid #9E9FA5",
         borderRadius: "8px",
         p: "24px",

@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import { Box } from "@mui/material";
+import { Stack } from "@mui/material";
 
 function BackgroundLayout({ children }) {
   return (
-    <Box
+    <Stack
       sx={{
         height: "70vh",
         backgroundImage:
@@ -11,11 +11,12 @@ function BackgroundLayout({ children }) {
         backgroundRepeat: "no-repeat",
         backgroundSize: "100% auto",
         position: "relative",
-        px: '24px',
+        px: "24px",
+        alignItems: "center",
       }}
     >
       {children}
-    </Box>
+    </Stack>
   );
 }
 
