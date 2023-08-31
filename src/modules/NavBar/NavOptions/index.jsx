@@ -1,8 +1,13 @@
 import MenuBar from "./MenuBar";
+import { useMediaQuery } from "@mui/material";
+import NavButtons from "./NavButtons";
 
 function NavOptions() {
-  // TODO: Add A different menubar on desktop screen size
-  return <MenuBar />;
+  const isSmallScreen = useMediaQuery("(max-width:720px)");
+
+  const RenderedMenuBar = isSmallScreen ? MenuBar : NavButtons;
+
+  return <RenderedMenuBar />;
 }
 
 export default NavOptions;
