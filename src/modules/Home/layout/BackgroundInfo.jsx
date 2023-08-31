@@ -1,16 +1,18 @@
-import { Box } from "@mui/material";
+import { Box, useMediaQuery } from "@mui/material";
 import PropTypes from "prop-types";
 
 function BackgroundInfo({ children }) {
+  const sm = useMediaQuery("(max-width:720px)");
+
   return (
     <Box
       sx={{
         bgcolor: "black",
         color: "white",
-        top: 200,
+        top: sm ? 200 : 0,
         position: "relative",
-        p: '70px 25px 40px 50px',
-        width: '300px'
+        p: sm ? "70px 25px 40px 50px" : "25vh 50px 40px 50px",
+        width: sm ? "300px" : "400px",
       }}
     >
       {children}
@@ -18,8 +20,6 @@ function BackgroundInfo({ children }) {
   );
 }
 
-BackgroundInfo.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+BackgroundInfo.propTypes = { children: PropTypes.node.isRequired };
 
 export default BackgroundInfo;

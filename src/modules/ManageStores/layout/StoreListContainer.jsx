@@ -10,7 +10,8 @@ function StoreListContainer({ children }) {
         width: "100%",
         bgcolor: "whitesmoke",
         borderRadius: "8px",
-        p: '12px'
+        p: "12px",
+        mb: "24px",
       }}
     >
       {children}
