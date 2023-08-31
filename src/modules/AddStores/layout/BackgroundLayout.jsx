@@ -11,6 +11,7 @@ function BackgroundLayout({ children }) {
         backgroundRepeat: "no-repeat",
         backgroundSize: "100% auto",
         position: "relative",
+        px: '24px',
       }}
     >
       {children}
