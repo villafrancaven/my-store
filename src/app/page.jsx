@@ -1,5 +1,6 @@
-import { Typography } from "@mui/material";
+"use client";
+import HomeModule from "@component/modules/Home";
 
 export default function Home() {
-  return <Typography>Home</Typography>;
+  return <HomeModule />;
 }
