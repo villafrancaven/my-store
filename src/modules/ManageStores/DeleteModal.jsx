@@ -1,13 +1,12 @@
-import { MyStoreContext } from "@component/provider/my-store-provider";
+import useMyStoreServices from "@component/hooks/useMyStoreServices";
 import { Button, Dialog, DialogActions, DialogTitle } from "@mui/material";
 import PropTypes from "prop-types";
-import { useContext } from "react";
 
 function DeleteModal({ open, handleClose, id }) {
-  const { handleDeleteStore } = useContext(MyStoreContext);
+  const { handleDeleteStoreMember } = useMyStoreServices();
 
   const handleDelete = () => {
-    handleDeleteStore(id);
+    handleDeleteStoreMember(id);
     handleClose();
   };
 

@@ -23,7 +23,7 @@ function ViewStoresModule() {
                 textAlign: "center",
                 alignSelf: "center",
                 width: "300px",
-                flexWrap: 'wrap',
+                flexWrap: "wrap",
               }}
             >
               No Stores Listed
@@ -31,7 +31,7 @@ function ViewStoresModule() {
           </Stack>
         ) : (
           <>
-            <Stack spacing={2} sx={{mb: '24px'}}>
+            <Stack spacing={2} sx={{ mb: "24px" }}>
               {storeList.map((store) => (
                 <StoreCard key={store.id} data={store} />
               ))}
